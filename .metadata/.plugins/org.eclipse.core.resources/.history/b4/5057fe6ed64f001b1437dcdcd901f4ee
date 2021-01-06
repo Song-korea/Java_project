@@ -1,0 +1,20 @@
+package testProject;
+
+import java.awt.Color;
+
+public class Ball {
+	
+	HashMap<String, Color> map = new  HashMap<String, Color>();
+	map.put("Red", Color.RED);
+	map.put("Green", Color.GREEN);
+
+	String colorName = "Green";
+	g.setColor(map.get(colorName));
+
+
+	
+	public static void main(String[] args) {
+		Color a = Color.RED;
+		System.out.println(a.toString());
+	}
+}

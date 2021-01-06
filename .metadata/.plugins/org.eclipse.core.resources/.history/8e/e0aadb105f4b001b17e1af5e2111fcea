@@ -1,0 +1,20 @@
+package rollingBall;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JComboBox;
+
+public class ComboBoxListener implements ActionListener{
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		JComboBox ballColorComboBox = (JComboBox) e.getSource();
+        String selectedColor = ballColorComboBox.getSelectedItem().toString();
+        System.out.println(selectedColor);
+        
+		
+	}
+
+}

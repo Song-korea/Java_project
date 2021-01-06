@@ -1,0 +1,101 @@
+package testProject;
+
+public class TestA{
+	
+	BallManager 				ballManager;
+	View						view;
+	private boolean 			isRedPlay;
+	private boolean				isBluePlay;
+	private boolean 			isGreenPlay;
+	
+	
+	
+	public TestA() {
+		view = new View();
+		ballManager = new BallManager();
+		init();
+		start();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	private void init() {
+		
+		
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	private void start() {
+		while(true) {
+			
+			if(isRedPlay) {
+				
+				
+				this.move();
+				this.reflect();
+			}
+			if(isBluePlay) {
+				
+			}
+			if(isGreenPlay) {
+				
+			}
+			
+			
+			view.draw();
+			
+			Thread.sleep(10);
+			
+			
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	private void move(){
+		
+	}
+	
+	private void reflect() {
+		
+	}
+	
+	
+	
+	
+	
+}

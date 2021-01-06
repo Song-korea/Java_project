@@ -1,0 +1,121 @@
+package testProject;
+
+import java.awt.Color;
+import java.util.HashMap;
+
+public class Ball {
+	
+	HashMap<String, Color> map = new  HashMap<String, Color>();
+	
+	public Ball() {
+
+		map.put("Red", Color.RED);
+		map.put("Green", Color.GREEN);
+		
+		
+		String colorName = "Green";
+//		System.out.println(String.valueOf(Color.RED.getRGB()));
+		String colorS = Integer.toString(Color.RED.getRGB());
+		Color c = new Color(Integer.parseInt(colorS));
+		System.out.println(colorS);
+		System.out.println(c);
+		
+		System.out.println(getColor("green").toString());
+
+	}
+	private String convertTypeColorToString(Color color) {
+		String colorName = null;
+		
+		if(Color.BLACK.equals(color))
+			colorName = "black";
+		else if(Color.BLUE.equals(color))
+			colorName = "blue";
+		else if(Color.RED.equals(color))
+			colorName = "red";
+		else if(Color.GREEN.equals(color))
+			colorName = "green";
+		else if(Color.CYAN.equals(color))
+			colorName = "cyan";
+		else if(Color.GRAY.equals(color))
+			colorName = "gray";
+		else if(Color.MAGENTA.equals(color))
+			colorName = "magenta";
+		else if(Color.ORANGE.equals(color))
+			colorName = "orange";
+		else if(Color.WHITE.equals(color))
+			colorName = "white";
+		else if(Color.PINK.equals(color))
+			colorName = "pink";
+		else
+			colorName = "null";
+		
+		return colorName;
+	}
+	Color theColor = getColor()
+			String colorName = null;
+			if (Color.BLACK.equals(theColor)) 
+			{
+			  colorName = "BLACK";
+			} 
+			else if (Color.WHITE.equals(theColor)) 
+			{
+			  colorName = "WHITE";
+			}
+			...
+			System.out.println(colorName);
+
+	
+	
+	private Color getColor(String col) {
+		Color color = null;
+	    switch (col.toLowerCase()) {
+	    case "black":
+	        color = Color.BLACK;
+	        break;
+	    case "blue":
+	        color = Color.BLUE;
+	        break;
+	    case "cyan":
+	        color = Color.CYAN;
+	        break;
+	    case "darkgray":
+	        color = Color.DARK_GRAY;
+	        break;
+	    case "gray":
+	        color = Color.GRAY;
+	        break;
+	    case "green":
+	        color = Color.GREEN;
+	        break;
+
+	    case "yellow":
+	        color = Color.YELLOW;
+	        break;
+	    case "lightgray":
+	        color = Color.LIGHT_GRAY;
+	        break;
+	    case "magneta":
+	        color = Color.MAGENTA;
+	        break;
+	    case "orange":
+	        color = Color.ORANGE;
+	        break;
+	    case "pink":
+	        color = Color.PINK;
+	        break;
+	    case "red":
+	        color = Color.RED;
+	        break;
+	    case "white":
+	        color = Color.WHITE;
+	        break;
+	        }
+	    return color;
+	    }
+	
+
+	public static void main(String[] args) {
+		new Ball();
+		
+	}
+}

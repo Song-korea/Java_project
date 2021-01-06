@@ -1,0 +1,100 @@
+package testProject;
+
+public class TestA{
+	
+	BallManager 				ballManager;
+	View						view;
+	private boolean 			isRedPlay;
+	private boolean				isBluePlay;
+	private boolean 			isGreenPlay;
+	
+	
+	public TestA() {
+		view = new View();
+		ballManager = new BallManager();
+		init();
+		start();
+	}
+	
+	
+	
+	
+	
+	
+	
+	private void init() {
+		view.setBallManager(ballManager);
+		view.registButtonListener(this);
+		
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	private void start() {
+		while(true) {
+			
+			if(isRedPlay) {
+				
+				
+				this.move();
+				this.reflect();
+			}
+			if(isBluePlay) {
+				
+			}
+			if(isGreenPlay) {
+				
+			}
+			
+			
+			view.draw();
+			
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+		}
+	}
+
+
+
+	private void move(){
+		
+	}
+	
+	private void reflect() {
+		
+	}
+	
+	public void clickedAdd() {
+		
+	}
+	public void clickedDelete() {
+		
+	}
+	public void clickedPlay() {
+		
+	}
+	public void clickedStop() {
+		
+	}
+	
+	
+	
+	
+}

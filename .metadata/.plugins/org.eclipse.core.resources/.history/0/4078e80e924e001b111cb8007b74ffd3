@@ -1,0 +1,17 @@
+package rollingBall;
+
+import java.util.LinkedList;
+
+public class BallCor {
+
+	private LinkedList<BallGroup> BallSet;
+	private String 				  material; 
+	
+	
+	public BallCor() {
+		BallSet = new LinkedList<BallGroup>();
+	}
+	
+	
+	
+}

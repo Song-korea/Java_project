@@ -1,0 +1,92 @@
+package rollingBall;
+
+import java.awt.Color;
+import java.util.LinkedList;
+
+public class BallGroupManager {
+	
+	private BallGroup redBallGroup;
+	private BallGroup blueBallGroup;
+	private BallGroup greenBallGroup;
+	
+	private LinkedList<BallGroup> ballGroupList;
+	
+	public LinkedList<BallGroup> getBallGroupList() {
+		return ballGroupList;
+	}
+
+	public BallGroupManager() {
+		redBallGroup 	= new BallGroup(Color.RED);
+		blueBallGroup 	= new BallGroup(Color.BLUE);
+		greenBallGroup 	= new BallGroup(Color.GREEN);
+		ballGroupList 	= new LinkedList<BallGroup>();
+		addBallGroupToList();
+	}
+	
+	private void addBallGroupToList() {
+		ballGroupList.add(redBallGroup);
+		ballGroupList.add(blueBallGroup);
+		ballGroupList.add(greenBallGroup);
+	}
+
+	public void addBallToGroup(String color) {
+		Ball ball = new Ball();
+		BallGroup ballGroup = getBallGroupByColor(color);
+		ballGroup.getBallList().add(ball);
+	}
+	
+	public void removeBallFromGroup(String color) {
+		BallGroup ballGroup = getBallGroupByColor(color);
+		ballGroup.getBallList().removeLast();
+	}
+	
+	public void playBallGroup(String color) {
+		BallGroup ballGroup = getBallGroupByColor(color);
+		ballGroup.setPlay(true);
+	}
+	
+	public void stopBallGroup(String color) {
+		BallGroup ballGroup = getBallGroupByColor(color);
+		ballGroup.setPlay(true);
+	}
+	
+	public int getBallNumber(String color) {
+		BallGroup ballGroup = getBallGroupByColor(color);
+		return ballGroup.getBallList().size();
+	}
+
+	public BallGroup getRedBallGroup() {
+		return redBallGroup;
+	}
+
+	public BallGroup getBlueBallGroup() {
+		return blueBallGroup;
+	}
+
+	public BallGroup getGreenBallGroup() {
+		return greenBallGroup;
+	}
+	
+	private BallGroup getBallGroupByColor(Color color) {
+		BallGroup ballGroup;
+		
+		for(int i=0; i<ballGroupList.size(); i++) {
+			if(color==ballGroupList.get(i).getColor())
+				ballGroup = ballGroupList.get(i);
+		}
+		
+		
+		if(string == "red")
+			ballGroup = this.redBallGroup;
+		else if(string == "blue")
+			ballGroup = this.blueBallGroup;
+		else if(string == "green")
+			ballGroup = this.greenBallGroup;
+		else
+			ballGroup = this.redBallGroup;
+		return ballGroup;
+	}
+	
+	
+	
+}

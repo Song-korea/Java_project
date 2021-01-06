@@ -1,0 +1,49 @@
+package rollingBall;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+
+import javax.swing.JComponent;
+
+public class DrawComponent extends JComponent {
+	
+	BallGroupManager ballManager;
+	
+	public Dimension getPreferredSize() {
+		return new Dimension(Core.WIDTH,Core.HEIGHT);
+	}
+	
+	@Override
+	public void paint(Graphics g) {
+		Ball ball;	
+		g.setColor(Color.BLACK);
+		g.fillRect(0, 0, Core.WIDTH, Core.HEIGHT);
+
+		g.setColor(Color.WHITE);
+		
+		for(int i=0; i<ballManager.getRedBallGroup().getBallListSize(); i++) {
+			ball = ballManager.getRedBallGroup().getBallList().get(i);
+			g.setColor(ballManager.getRedBallGroup().getColor());
+			g.fillOval(ball.getBallPosX()-10, ball.getBallPosY()-10, 20, 20);
+		}
+		
+		for(int i=0; i<ballManager.getBlueBallGroup().getBallListSize(); i++) {
+			ball = ballManager.getBlueBallGroup().getBallList().get(i);
+			g.setColor(ballManager.getBlueBallGroup().getColor());
+			g.fillOval(ball.getBallPosX()-10, ball.getBallPosY()-10, 20, 20);
+		}
+		
+		for(int i=0; i<ballManager.getGreenBallGroup().getBallListSize(); i++) {
+			ball = ballManager.getGreenBallGroup().getBallList().get(i);
+			g.setColor(ballManager.getGreenBallGroup().getColor());
+			g.fillOval(ball.getBallPosX()-10, ball.getBallPosY()-10, 20, 20);
+		}
+		
+	}
+
+	public void setBallManager(BallGroupManager ballManager) {
+		this.ballManager = ballManager;
+	}
+	
+}

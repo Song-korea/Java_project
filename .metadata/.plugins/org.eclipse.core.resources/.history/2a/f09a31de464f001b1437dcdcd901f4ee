@@ -1,0 +1,80 @@
+package rollingBall;
+
+import java.awt.Color;
+
+public class BallGroupManager {
+	
+	private BallGroup redBallGroup;
+	private BallGroup blueBallGroup;
+	private BallGroup greenBallGroup;
+	
+	public BallGroupManager() {
+		redBallGroup 	= new BallGroup(Color.RED);
+		blueBallGroup 	= new BallGroup(Color.BLUE);
+		greenBallGroup 	= new BallGroup(Color.GREEN);
+	}
+	
+	public void addBall(String color) {
+		Ball ball = new Ball();
+		BallGroup ballGroup = findBallGroup(color);
+		ballGroup.getBallList().add(ball);
+	}
+	
+	public void removeBall(String color) {
+		BallGroup ballGroup = findBallGroup(color);
+		ballGroup.getBallList().removeLast();
+	}
+	
+	public void playBall(String color) {
+		BallGroup ballGroup = findBallGroup(color);
+		ballGroup.setPlay(true);
+	}
+	
+	public void stopBall(String string) {
+		BallGroup ballGroup = findBallGroup(color);
+		ballGroup.setPlay(true);
+	}
+	
+	public boolean isPlayBall(BallGroup ballGroup) {
+		return ballGroup.isPlay();
+	}
+	
+	public Ball getBall(BallGroup ballGroup, int i) {
+		Ball ball = ballGroup.getBall(i);
+		return ball;
+	}
+	
+	public int getBallNumber(BallGroup ballGroup) {
+		return ballGroup.getBallSize();
+	}
+
+	public BallGroup getRedBall() {
+		return redBallGroup;
+	}
+
+	public BallGroup getBlueBall() {
+		return blueBallGroup;
+	}
+
+	public BallGroup getGreenBall() {
+		return greenBallGroup;
+	}
+	public Color getColor(BallGroup ballGroup) {
+		return ballGroup.getColor();
+	}
+	
+	private BallGroup findBallGroup(String string) {
+		BallGroup ballGroup;
+		
+		if(string == "red")
+			ballGroup = this.redBallGroup;
+		else if(string == "blue")
+			ballGroup = this.blueBallGroup;
+		else if(string == "green")
+			ballGroup = this.greenBallGroup;
+		else
+			ballGroup = this.redBallGroup;
+		return ballGroup;
+	}
+	
+}

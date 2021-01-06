@@ -1,0 +1,9 @@
+package rollingBall;
+
+import java.awt.Color;
+
+public class BallGroup {
+
+	boolean 		isPlay;
+	Color 			Red;
+}

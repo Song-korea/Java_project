@@ -1,0 +1,126 @@
+package rollingBall;
+
+import java.awt.Color;
+
+public class Core {//정보는 변수
+	private View 								view;
+	private BallGroupManager 					ballManager;
+	
+	public static final int WIDTH = 780;
+	public static final int HEIGHT = 480;
+	
+	public Core() {
+		view = new View();
+		ballManager = new BallGroupManager();
+		
+		this.init();
+		this.start();
+	}
+
+	private void init() {
+		view.setBallManager(ballManager);
+		view.registerButtonListener(new ButtonActionListener(this));
+	}
+
+	private void start() {
+		
+		while(true) {
+			
+			if(ballManager.isPlayBall("red"))
+				moveBallGroup("red");
+
+			if(ballManager.isPlayBall("blue"))
+				moveBallGroup("blue");
+			
+			if(ballManager.isPlayBall("greenBall"))
+				moveBallGroup("greenBall");
+			
+			this.draw();
+
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		
+		}
+	}
+
+	private void moveBallGroup(String color) {
+		Ball ball;
+		
+		for(int i=0; i<ballManager.getBallNumber(color);i++) {
+			ball = ballManager.getBall(color, i);
+			moveBall(ball);
+			reflectBall(ball);
+		}
+	}
+	
+	private void moveBall(Ball ball) {
+			if(ball.isRight())
+				ball.setBallPosX(ball.getBallPosX() + 1);
+			else
+				ball.setBallPosX(ball.getBallPosX() - 1);
+			
+			if(ball.isUp())
+				ball.setBallPosY(ball.getBallPosY() + 1);
+			else
+				ball.setBallPosY(ball.getBallPosY() - 1);
+	}
+
+	private void reflectBall(Ball ball) {
+			if(ball.getBallPosX() - 10 <=0 || ball.getBallPosX() + 10>= WIDTH)
+				ball.setRight(!ball.isRight());
+			if(ball.getBallPosY() - 10 <=0 || ball.getBallPosY() + 10>= HEIGHT)
+				ball.setUp(!ball.isUp());
+	}		
+	
+	
+	private void draw() {
+		view.draw();
+	}
+
+	public void clickedPlay() {
+		playBall();
+	}
+	
+	public void clickedStop() {
+		stopBall();
+	}
+	
+	public void clickedAdd() {
+		String selectedColor = view.getSelectedColor();
+		addBall(selectedColor);
+	}
+	
+	public void clickedDelete() {
+		String selectedColor = view.getSelectedColor();
+		deleteBall(selectedColor);
+	}
+	
+	private void addBall(String selectedColor) {
+		ballManager.addBallToGroup(selectedColor);
+	}
+	
+	
+	private void deleteBall(String selectedColor) {
+		ballManager.removeBall(selectedColor);
+	}
+	
+	private void playBall() {
+		String selectedColor = view.getSelectedColor();
+		ballManager.playBall(selectedColor);
+	}
+	
+	private void stopBall() {
+		String selectedColor = view.getSelectedColor();
+		ballManager.stopBall(selectedColor);
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		new Core();
+	}
+		
+}

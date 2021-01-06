@@ -1,0 +1,12 @@
+package testProject;
+
+import java.awt.Color;
+
+public class Ball {
+
+	
+	public static void main(String[] args) {
+		Color a = Color.RED;
+		System.out.println(a.toString());
+	}
+}

@@ -1,0 +1,34 @@
+package rollingBall;
+
+import java.util.LinkedList;
+
+public class BallCor {
+
+	private LinkedList<BallGroup> ballSet;
+	private String 				  material; 
+	
+	
+	public BallCor(String material) {
+		ballSet = new LinkedList<BallGroup>();
+		this.material = material;
+	}
+	
+	private void addBall(BallGroup ballGroup) {
+		ballSet.add(ballGroup);
+	}
+
+	private void deleteBall() {
+		// TODO Auto-generated method stub
+	}
+	
+	private int getBallSetSize() {
+		// TODO Auto-generated method stub
+		return ballSet.size();
+	}
+	
+	private BallGroup getBallGroup(i) {
+		return ballSet.get(i);
+	}
+	
+	
+}

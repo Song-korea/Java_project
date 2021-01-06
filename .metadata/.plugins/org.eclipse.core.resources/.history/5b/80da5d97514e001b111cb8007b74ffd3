@@ -1,0 +1,95 @@
+package testProject;
+
+public class TestA{
+	
+	Ball 						ball;
+	private boolean 			isRedPlay;
+	private boolean				isBluePlay;
+	private boolean 			isGreenPlay;
+	
+	
+	
+	public TestA() {
+		
+		
+		init();
+		start();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	private void init() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	private void start() {
+		while(true) {
+			
+			if(isRedPlay) {
+				
+			}
+			if(isBluePlay) {
+				
+			}
+			if(isGreenPlay) {
+				
+			}
+			
+			
+			view.draw();
+			
+			
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	private void move(){
+		
+	}
+	
+	private void reflect() {
+		
+	}
+	
+	
+	
+	
+	
+}

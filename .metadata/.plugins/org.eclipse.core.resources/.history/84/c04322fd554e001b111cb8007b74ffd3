@@ -1,0 +1,21 @@
+package testProject;
+
+public class View {
+
+	ButtonActionListener 	buttonActionListener;
+	
+	public void draw() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setBallManager(BallManager ballManager) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void infromedCore(TestA testA) {
+		buttonActionListener.setCore(testA);
+	}
+
+}

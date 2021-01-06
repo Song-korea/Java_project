@@ -1,0 +1,63 @@
+package rollingBall;
+
+import java.util.Random;
+
+public class Ball {
+	private int 		ballPosX;
+	private int 		ballPosY;
+	
+	private boolean 	isRight;
+	private boolean 	isUp;
+	
+	private String 		color;
+	
+	public Ball() {
+		isRight = true;
+		isUp = true;
+		color = null;
+		Random r = new Random();
+		this.ballPosX = 10 + r.nextInt(Core.WIDTH-50);
+		this.ballPosY = 10 + r.nextInt(Core.HEIGHT-50);
+	}
+
+
+	public int getBallPosX() {
+		return ballPosX;
+	}
+
+
+	public void setBallPosX(int ballPosX) {
+		this.ballPosX = ballPosX;
+	}
+
+
+	public int getBallPosY() {
+		return ballPosY;
+	}
+
+
+	public void setBallPosY(int ballPosY) {
+		this.ballPosY = ballPosY;
+	}
+
+
+	public boolean isRight() {
+		return isRight;
+	}
+
+
+	public void setRight(boolean isRight) {
+		this.isRight = isRight;
+	}
+
+
+	public boolean isUp() {
+		return isUp;
+	}
+
+
+	public void setUp(boolean isUp) {
+		this.isUp = isUp;
+	}
+	
+}

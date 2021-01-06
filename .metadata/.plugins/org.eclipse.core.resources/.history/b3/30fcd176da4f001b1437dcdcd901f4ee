@@ -1,0 +1,29 @@
+package testProject;
+
+import java.awt.Color;
+import java.util.HashMap;
+
+public class Ball {
+	
+	HashMap<String, Color> map = new  HashMap<String, Color>();
+	public Ball() {
+
+		map.put("Red", Color.RED);
+		map.put("Green", Color.GREEN);
+		
+		
+		String colorName = "Green";
+//		System.out.println(String.valueOf(Color.RED.getRGB()));
+		String colorS = Integer.toString(Color.RED.getRGB());
+		Color c = new Color(Integer.parseInt(colorS));
+		System.out.println(c);
+
+
+	}
+
+	
+	public static void main(String[] args) {
+		new Ball();
+		
+	}
+}

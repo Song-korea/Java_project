@@ -1,0 +1,21 @@
+package testProject;
+
+public class View implements JFrame{
+	
+	ButtonActionListener 	buttonActionListener;
+	DrawComponent			comp;
+	
+	public void draw() {
+		fram
+	}
+
+	public void setBallManager(BallManager ballManager) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void infromedCore(TestA testA) {
+		buttonActionListener.setCore(testA);
+	}
+
+}

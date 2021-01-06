@@ -1,0 +1,75 @@
+package rollingBall;
+
+import java.util.Random;
+
+public class Ball {                   //목적에 따라 클래스를 나누거나
+										//빨간공의 움직임을 수정해, 빨간공의 색을 바꿔라, 빨간공은 멈춰라
+										//이런식일때 고쳐야할 부분이 볼과 코어 둘 중 계속 바뀐다면
+										//코드에 문제가 있다.
+	private int 		ballPosX;
+	private int 		ballPosY;
+	
+	private boolean 	isRight;
+	private boolean 	isUp;
+	
+	private String 		color;
+	
+	public Ball(String color) {
+		Random r = new Random();
+
+		this.isRight = true;
+		this.isUp = true;
+		this.color = color;
+		this.ballPosX = 10 + r.nextInt(Core.WIDTH-50);
+		this.ballPosY = 10 + r.nextInt(Core.HEIGHT-50);
+	}
+
+
+	public int getBallPosX() {
+		return ballPosX;
+	}
+
+
+	public void setBallPosX(int ballPosX) {
+		this.ballPosX = ballPosX;
+	}
+
+
+	public int getBallPosY() {
+		return ballPosY;
+	}
+
+
+	public void setBallPosY(int ballPosY) {
+		this.ballPosY = ballPosY;
+	}
+
+
+	public boolean isRight() {
+		return isRight;
+	}
+
+
+	public void setRight(boolean isRight) {
+		this.isRight = isRight;
+	}
+
+
+	public boolean isUp() {
+		return isUp;
+	}
+
+
+	public void setUp(boolean isUp) {
+		this.isUp = isUp;
+	}
+	
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+}

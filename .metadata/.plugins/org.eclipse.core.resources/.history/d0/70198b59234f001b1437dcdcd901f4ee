@@ -1,0 +1,55 @@
+package rollingBall;
+
+import java.awt.Color;
+import java.util.LinkedList;
+
+public class BallColorGroup {
+	
+	private LinkedList<Ball> ballPocket;
+	private Color			 color; 
+	private boolean 		 isPlay;
+	
+	public BallColorGroup(Color color) {
+		ballPocket = new LinkedList<Ball>();
+		this.color = color;
+		this.isPlay = false;
+	}
+	
+	public int getBallPocketSize() {
+		return ballPocket.size();
+	}
+
+	public Ball getBall(int i) {
+		return ballPocket.get(i);
+	}
+	
+	public void addBall(Ball ball) {
+		ballPocket.add(ball);
+	}
+	
+	public void removeBall() {
+		ballPocket.removeLast();
+	}
+
+
+	public Color getColor() {
+		return color;
+	}
+
+	public void setColor(Color color) {
+		this.color = color;
+	}
+
+	public boolean isPlay() {
+		return isPlay;
+	}
+
+	public void setPlay(boolean isPlay) {
+		this.isPlay = isPlay;
+	}
+	
+	
+	
+	
+	
+}

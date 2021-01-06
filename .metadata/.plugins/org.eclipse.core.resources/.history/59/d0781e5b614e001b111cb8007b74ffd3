@@ -1,0 +1,29 @@
+package testProject;
+
+import javax.swing.JFrame;
+
+public class View extends JFrame{
+	
+	DrawComponent			comp;
+	JFrame   				frame;
+
+	public View() {
+		frame = new JFrame();
+		comp = new DrawComponent();
+	}
+	public void draw() {
+		frame.repaint();
+	}
+
+	public void setBallManager(BallManager ballManager) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void registButtonListener(TestA testA) {
+		
+		
+	}
+
+}

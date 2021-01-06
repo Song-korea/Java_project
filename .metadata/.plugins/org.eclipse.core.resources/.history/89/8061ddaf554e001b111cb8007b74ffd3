@@ -1,0 +1,10 @@
+package testProject;
+
+public class View {
+
+	public void draw() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
